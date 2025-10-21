@@ -6,14 +6,26 @@ const app = express()
 
 //create an Arrray for appointment 
 const submissions = []
-app.post('/', (req, res) => {
+app.post('/first', (req, res) => {
     if (fname == null || lname == null) {
         document.getElementById("er").style.display = "block"
     }
     else {
+        const newest = {
+        fname: req.body.fname,
+        lname: req.body.lname,
+        date: req.body.date,
+        time: req.body.time,
+        timestamp: Date.now()
+    }
+        submissions.push(newest)
         res.sendFile(`${import.meta.dirname}/views/home2.html`)
     }
 })
+
+app.get('/admin', (req, res) => {
+    res.sendFile(`${import.meta.dirname}/views/home3.html`)
+});
 
 
 app.listen(PORT, () => {

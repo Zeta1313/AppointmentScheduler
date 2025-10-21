@@ -6,6 +6,7 @@ const app = express()
 
 //create an Arrray for appointment 
 const submissions = []
+
 app.post('/', (req, res) => {
     if (fname == null || lname == null) {
         document.getElementById("er").style.display = "block"
@@ -13,6 +14,8 @@ app.post('/', (req, res) => {
     else {
         res.sendFile(`${import.meta.dirname}/views/home2.html`)
     }
+
+
 })
 
 

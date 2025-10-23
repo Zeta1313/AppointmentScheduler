@@ -1,4 +1,4 @@
-document.getElementById('pizza-form').onsubmit = () => {
+document.getElementById('firstform').onsubmit = () => {
 
  clearErrors()
 
@@ -17,5 +17,13 @@ document.getElementById('pizza-form').onsubmit = () => {
  if (!lname) {
   document.getElementById("err-lname").style.display = "block"
   isValid = false
+ }
+ return isValid
+}
+
+function clearErrors() {
+ let errors = document.getElementsByClassName("error")
+ for (let i = 0; i < errors.length; i++) {
+  errors[i].style.display = "none"
  }
 }
